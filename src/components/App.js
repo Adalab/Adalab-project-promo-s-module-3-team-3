@@ -1,12 +1,15 @@
 import cover from '../images/cover.jpeg'
 import user from '../images/user.jpeg'
+import logo from '../images/logo-adalab.png'
 import '../styles/App.scss';
 
 function App() {
   return (
     <div className="container">
       <header className="header">
+        <i className="fa-solid fa-laptop-code"></i>
         <p className="text">Proyectos Molones</p>
+        <img className="logo" src={logo} alt="" />
       </header>
       <main className="main">
         <section className="preview">
