@@ -2,22 +2,22 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 80vh;
+    height: 100vh;
     padding-top: 55px;
 
     @media (min-width: $breakpoint-tablet) {
         flex-direction: row;
         align-items:flex-start;
         padding-top: 0px;
+        height: 80vh;
     }
 }
 
 .main .title {
     color: #ffffff;
     text-align: center;
-
     @media (min-width: $breakpoint-tablet) {
-        padding-top: 25px;
+            padding-top: 24px;
     }
 }
 
@@ -52,12 +52,14 @@
 
 .main .form {
     background-color: #302c42;
-    width: 100vw;
+    width: 80vw;
     padding: 146px 40px 0 40px;
+    background: radial-gradient(circle, rgba(64, 58, 95, 1) 13%, rgba(33, 30, 46, 1) 61%);
 
     @media (min-width: $breakpoint-tablet) {
         width: 40%;
-        padding:0px;
+        padding: 0px;
+        margin-top:25px;
     }
 }
 
@@ -113,12 +115,12 @@
 
 .main .preview .image {
     object-fit: cover;
-        width: 100%;
-        height: 90%;
+    width: 100%;
+    height: 80%;
+    margin-bottom: 50px;
 
     @media (min-width: $breakpoint-tablet) {
-        width: 100%;
-        height: 80%;
+        margin-bottom: 0px;
     }
 }
 
