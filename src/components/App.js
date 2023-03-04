@@ -9,7 +9,7 @@ function App() {
       <header className="header">
         <i className="fa-solid fa-laptop-code"></i>
         <p className="text">Proyectos Molones</p>
-        <img className="logo" src={logo} alt="" />
+        <img className="image__logo" src={logo} alt="" />
       </header>
       <main className="main">
         <section className="preview">
