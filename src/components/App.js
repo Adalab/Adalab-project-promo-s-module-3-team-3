@@ -9,8 +9,8 @@ function App() {
 
       <header className="header">
         <p className="header__p">
-          <span className="header__p--span fa-solid fa-laptop-code"></span>
-          Proyectos Molones</p>
+          <i className="header__p--i fa-solid fa-laptop-code"></i>
+          <span className="header__p--span">Proyectos Molones</span></p>
         <img className="header__img" src={logo} alt="" />
       </header>
       <main className="main">
