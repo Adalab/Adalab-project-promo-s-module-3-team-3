@@ -13,11 +13,12 @@ function App() {
           <span className="header__p--span">Proyectos Molones</span></p>
         <img className="header__img" src={logo} alt="" />
       </header>
+
       <main className="main">
         <section className="preview">
           <img className="image" src={cover} alt="" />
 
-          <section className="autor">
+          <section className="author">
             <section className="info-project">
               <p className="subtitle">Personal Project Card</p>
               <hr className="line" />
@@ -35,7 +36,7 @@ function App() {
               </section>
             </section>
 
-            <section className="info-autor">
+            <section className="info-author">
               <img className="image" src={user} alt="" />
               <p className="job">Full Stack Developer</p>
               <p className="name">Emmelie Björklund</p>
@@ -103,13 +104,13 @@ function App() {
             <hr className="line" />
           </section>
 
-          <fieldset className="autor">
+          <fieldset className="author">
             <input
               className="input"
               type="text"
               placeholder="Nombre"
-              name="autor"
-              id="autor"
+              name="author"
+              id="author"
             />
             <input
               className="input"
