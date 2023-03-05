@@ -3,23 +3,23 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+        &__p {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 14px;
+            font-family: $font__text;
+            font-weight: 300;
+            width: 139px;
+                &--span {
+                    color: white;
+                    font-size: 30px;
+                    padding-right: 7px;
+                }
+        }
+        &__img {
+            height: 46px;
+            width: 123px;
+        }
+    
 }
 
-.header .text {
-    color: rgba(255, 255, 255, 0.5);
-    font-size: 14px;
-    font-family: $font__text;
-    font-weight: 300;
-    width: 139px;
-}
 
-.fa-laptop-code {
-    color: white;
-    font-size: 30px;
-    padding-right: 7px;
-}
-
-.image__logo {
-    height: 46px;
-    width: 123px;
-}

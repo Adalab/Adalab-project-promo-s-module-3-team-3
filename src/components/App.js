@@ -6,10 +6,12 @@ import '../styles/App.scss';
 function App() {
   return (
     <div className="container">
+
       <header className="header">
-        <i className="fa-solid fa-laptop-code"></i>
-        <p className="text">Proyectos Molones</p>
-        <img className="image__logo" src={logo} alt="" />
+        <p className="header__p">
+          <span className="header__p--span fa-solid fa-laptop-code"></span>
+          Proyectos Molones</p>
+        <img className="header__img" src={logo} alt="" />
       </header>
       <main className="main">
         <section className="preview">
@@ -64,6 +66,7 @@ function App() {
               id="slogan"
               placeholder="Slogan"
             />
+          <div>
             <input
               className="input"
               type="text"
@@ -78,6 +81,7 @@ function App() {
               name="demo"
               id="demo"
             />
+          </div>
             <input
               className="input"
               type="text"
