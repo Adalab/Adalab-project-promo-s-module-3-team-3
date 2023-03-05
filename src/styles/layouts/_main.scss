@@ -3,12 +3,123 @@
     flex-direction: column;
     align-items: center;
     padding-top: 55px;
+    .preview {
+        width: 90%;
+        @media (min-width: $breakpoint-tablet) {
+                width: 60%;
+                height: 100%;
+                padding: 20px;
+            }
+        .image {
+            object-fit: cover;
+                width: 100%;
+                height: 80%;
+                margin-bottom: 50px;
+            
+                @media (min-width: $breakpoint-tablet) {
+                    margin-bottom: 0px;
+                }
+        }    
+        .author {
+            background-color: white;
+            color: #3e3e3e;
+            height: 50%;
+            transform: translateY(-100px);
+            margin: auto;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: row-reverse;
+            padding: 20px 8.5px 34.5px 8.5px;
+            overflow-y: scroll;
+            width: 95%;
+            height: 214px;
+            
+                @media (min-width: $breakpoint-tablet) {
+                    padding: 30px;
+                    width: 90%;
+                    height: 312px;
+                    gap: 40px;
+                }
 
+            .articleProject {
+                width: 60%;
+                    &__subtitle{
+                        font-size: 14px;
+                        text-align: center;
+                    }
+                    &__line{
+                        width: 100%;
+                        border: 0;
+                        height: 1px;
+                    
+                        background-image: linear-gradient(to right,
+                                rgba(255, 255, 255, 0),
+                                rgba(1, 1, 1, 0.75),
+                                rgba(255, 255, 255, 0));
+                    }
+                    &__title {
+                        font-size: 20px;
+                        color: black;
+                        margin-bottom: 10px;
+                    }
+                    &__slogan {
+                        font-size: 14px;
+                        margin-bottom: 10px;
+                    }
+                    &__desc{
+                        font-size: 12px;
+                        margin-bottom: 10px;
+                    }
+                    &__technologies{
+                        background-color: lightgray;
+                        border-radius: 20px;
+                        font-size: 14px;
+                        padding: 10px;
+                        width: 70%;
+                            &--text {
+                                font-size: 10px;
+                                color: #505050;
+                            }
+                    }
+            }
+        }
+    }
+    
     @media (min-width: $breakpoint-tablet) {
         flex-direction: row;
         align-items:flex-start;
         padding-top: 0px;
     }
+}
+
+.main .project,
+.main .author {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: none;
+}
+
+
+.info-author {
+    width: 40%;
+    text-align: center;
+}
+
+.info-author .image {
+    border-radius: 50%;
+    width: 80px;
+    height: 110px;
+}
+
+.info-author .job {
+    font-weight: bold;
+    color: black;
+    font-size: 14px;
+}
+
+.info-author .name {
+    font-size: 16px;
 }
 
 .main .title {
@@ -39,14 +150,7 @@
             rgba(255, 255, 255, 0));
 }
 
-.main .preview {
-    width: 90%;
-    @media (min-width: $breakpoint-tablet) {
-            width: 60%;
-            height: 100%;
-            padding: 20px;
-        }
-}
+
 
 .main .form {
     background-color: #302c42;
@@ -61,13 +165,7 @@
     }
 }
 
-.main .project,
-.main .author {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    border: none;
-}
+
 
 .main .input,
 .textarea {
@@ -111,96 +209,7 @@
     border: solid 2px white;
 }
 
-.main .preview .image {
-    object-fit: cover;
-    width: 100%;
-    height: 80%;
-    margin-bottom: 50px;
 
-    @media (min-width: $breakpoint-tablet) {
-        margin-bottom: 0px;
-    }
-}
-
-.main .preview .author {
-    background-color: white;
-    color: #3e3e3e;
-    height: 50%;
-    transform: translateY(-100px);
-    margin: auto;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: row-reverse; 
-    padding: 20px 8.5px 34.5px 8.5px;
-    overflow-y: scroll;
-    width: 95%;
-    height: 214px;
-
-    @media (min-width: $breakpoint-tablet) {
-        padding: 30px;
-        width: 90%;
-        height: 312px;
-        gap: 40px;
-    }
-
-}
-
-.info-author {
-    width: 40%;
-    text-align: center;
-}
-
-.info-author .image {
-    border-radius: 50%;
-    width: 80px;
-    height: 110px;
-}
-
-.info-author .job {
-    font-weight: bold;
-    color: black;
-    font-size: 14px;
-}
-
-.info-author .name {
-    font-size: 16px;
-}
-
-.info-project {
-    width: 60%;
-}
-
-.info-project .subtitle {
-    font-size: 14px;
-    text-align: center;
-}
-
-.info-project .title {
-    font-size: 20px;
-    color: black;
-    margin-bottom: 10px;
-}
-
-.info-project .desc {
-    font-size: 12px;
-    margin-bottom: 10px;
-}
-
-.info-project .slogan {
-    font-size: 14px;
-    margin-bottom: 10px;
-}
-
-.info-project .line {
-    width: 100%;
-    border: 0;
-    height: 1px;
-
-    background-image: linear-gradient(to right,
-            rgba(255, 255, 255, 0),
-            rgba(1, 1, 1, 0.75),
-            rgba(255, 255, 255, 0));
-}
 
 .btn-color {
     border-radius: 20px;
@@ -214,13 +223,7 @@
     color: white;
 }
 
-.technologies {
-    background-color: lightgray;
-    border-radius: 20px;
-    font-size: 14px;
-    padding: 10px;
-    width: 70%;
-}
+
 
 .card {
     color: white;

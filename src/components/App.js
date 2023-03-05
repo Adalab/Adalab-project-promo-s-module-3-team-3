@@ -19,28 +19,28 @@ function App() {
           <img className="image" src={cover} alt="" />
 
           <section className="author">
-            <section className="info-project">
-              <p className="subtitle">Personal Project Card</p>
-              <hr className="line" />
+            <article className="articleProject">
+              <small className="articleProject__subtitle">Personal Project Card</small>
+              <hr className="articleProject__line" />
 
-              <h2 className="title">Elegant Workspace</h2>
-              <p className="slogan">Diseños Exclusivos</p>
-              <p className="desc">
+              <h2 className="articleProject__title">Elegant Workspace</h2>
+              <p className="articleProject__slogan">Diseños Exclusivos</p>
+              <p className="articleProject__desc">
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                 Libero, delectus? Voluptates at hic aliquam porro ad suscipit
                 harum laboriosam saepe earum doloribus aperiam, ullam culpa
                 accusantium placeat odit corrupti ipsum!
               </p>
-              <section className="technologies">
-                <p className="text">React JS, MongoDB</p>
-              </section>
-            </section>
+              <div className="articleProject__technologies">
+                <p className="articleProject__technologies--text">React JS, MongoDB</p>
+              </div>
+            </article>
 
-            <section className="info-author">
+            <article className="info-author">
               <img className="image" src={user} alt="" />
               <p className="job">Full Stack Developer</p>
               <p className="name">Emmelie Björklund</p>
-            </section>
+            </article>
           </section>
         </section>
 
