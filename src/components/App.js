@@ -105,7 +105,7 @@ function App() {
               value={slogan}
               onChange={handleInput}
             />
-          <div>
+          <div className='form__project--div'>
             <input
               className="form__project--input"
               type="text"
