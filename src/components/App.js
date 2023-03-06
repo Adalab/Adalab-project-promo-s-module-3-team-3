@@ -58,10 +58,15 @@ function App() {
               <h2 className="articleProject__title">{name || 'Elegant Workspace'}</h2>
               <p className="articleProject__slogan">{slogan || 'Diseños Exclusivos'}</p>
               <p className="articleProject__desc">
-                {desc || 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero delectus Voluptates at hic aliquam porro ad suscipit harum laboriosam saepe earum doloribus aperiam, ullam culpa accusantium placeat odit corrupti ipsum!'}
+                {desc || 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet faucibus commodo tellus lectus lobortis. '}
               </p>
               <div className="articleProject__technologies">
-                <p className="articleProject__technologies--text">{technologies || 'React JS, MongoDB'}</p>
+                <p className="articleProject__technologies--text">{technologies || 'React JS - HTML - CSS'}
+                </p>
+                <span className='articleProject__technologies--icons'>
+                  <i class="fa-solid fa-globe"></i>
+                  <i class="fa-brands fa-github"></i>
+                </span>
               </div>
             </article>
 
