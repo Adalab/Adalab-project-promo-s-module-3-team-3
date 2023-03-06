@@ -37,31 +37,31 @@ function App() {
             </article>
 
             <article className="info-author">
-              <img className="image" src={user} alt="" />
-              <p className="job">Full Stack Developer</p>
-              <p className="name">Emmelie Björklund</p>
+              <img className="info-author__image" src={user} alt="" />
+              <p className="info-author__job">Full Stack Developer</p>
+              <p className="info-author__name">Emmelie Björklund</p>
             </article>
           </section>
         </section>
 
         <section className="form">
-          <h2 className="title">Información</h2>
+          <h2 className="form__title">Información</h2>
 
-          <section className="ask-info">
-            <p className="subtitle">Cuéntanos sobre el proyecto</p>
-            <hr className="line" />
+          <section className="form__ask-info">
+            <p className="form__ask-info--subtitle">Cuéntanos sobre el proyecto</p>
+            <hr className="form__ask-info--line" />
           </section>
 
-          <fieldset className="project">
+          <fieldset className="form__project">
             <input
-              className="input"
+              className="form__project--input"
               type="text"
               placeholder="Nombre del proyecto"
               name="name"
               id="name"
             />
             <input
-              className="input"
+              className="form__project--input"
               type="text"
               name="slogan"
               id="slogan"
@@ -69,14 +69,14 @@ function App() {
             />
           <div>
             <input
-              className="input"
+              className="form__project--input"
               type="text"
               name="repo"
               id="repo"
               placeholder="Repo"
             />
             <input
-              className="input"
+              className="form__project--input"
               type="text"
               placeholder="Demo"
               name="demo"
@@ -84,14 +84,14 @@ function App() {
             />
           </div>
             <input
-              className="input"
+              className="form__project--input"
               type="text"
               placeholder="Tecnologías"
               name="technologies"
               id="technologies"
             />
             <textarea
-              className="textarea"
+              className="form__project--textarea"
               type="text"
               placeholder="Descripción"
               name="desc"
@@ -99,21 +99,21 @@ function App() {
             ></textarea>
           </fieldset>
 
-          <section className="ask-info">
-            <p className="subtitle">Cuéntanos sobre la autora</p>
-            <hr className="line" />
+          <section className="form__ask-info">
+            <p className="form__ask-info--subtitle">Cuéntanos sobre la autora</p>
+            <hr className="form__ask-info--line" />
           </section>
 
-          <fieldset className="author">
+          <fieldset className="form__author">
             <input
-              className="input"
+              className="form__author--input"
               type="text"
               placeholder="Nombre"
               name="author"
               id="author"
             />
             <input
-              className="input"
+              className="form__author--input"
               type="text"
               placeholder="Trabajo"
               name="job"
@@ -121,17 +121,17 @@ function App() {
             />
           </fieldset>
 
-          <section className="buttons-img">
-            <button className="btn">Subir foto de proyecto</button>
-            <button className="btn">Subir foto de autora</button>
+          <section className="form__buttons-img">
+            <button className="form__buttons-img--btn">Subir foto de proyecto</button>
+            <button className="form__buttons-img--btn">Subir foto de autora</button>
           </section>
-          <section className="buttons-img">
-            <button className="btn-large" onClick="{handleClickCreateCard}">
+          <section className="form__buttons-img">
+            <button className="form__buttons-img--btn-large" onClick="{handleClickCreateCard}">
               Crear Tarjeta
             </button>
           </section>
 
-          <section className="card">
+          <section className="form__card">
             <span className=""> La tarjeta ha sido creada: </span>
             <a href="" className="" target="_blank" rel="noreferrer"> </a>
           </section>
