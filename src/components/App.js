@@ -2,8 +2,40 @@ import cover from '../images/cover.jpeg'
 import user from '../images/user.jpeg'
 import logo from '../images/logo-adalab.png'
 import '../styles/App.scss';
+import { useState } from 'react';
 
 function App() {
+
+  const [name, setName] = useState("");
+  const [slogan, setSlogan] = useState("");
+  const [repo, setRepo] = useState("");
+  const [demo, setDemo] = useState("");
+  const [technologies, setTechnologies] = useState("");
+  const [desc, setDesc] = useState("");
+  const [author, setAuthor] = useState("");
+  const [job, setJob] = useState("");
+
+  const handleInput = (ev) => {
+    const inputValue = ev.target.value;
+    const inputName = ev.target.name;
+    if(inputName === 'name') {
+      setName(inputValue);
+    } else if(inputName === 'slogan') {
+      setSlogan(inputValue);
+    } else if(inputName === 'repo') {
+      setRepo(inputValue);
+    } else if(inputName === 'demo') {
+      setDemo(inputValue);
+    } else if(inputName === 'technologies') {
+      setTechnologies(inputValue);
+    } else if(inputName === 'desc') {
+      setDesc(inputValue);
+    } else if(inputName === 'author') {
+      setAuthor(inputValue);
+    } else if(inputName === 'job') {
+      setJob(inputValue);
+    }
+  }
   return (
     <div className="container">
 
@@ -23,23 +55,20 @@ function App() {
               <small className="articleProject__subtitle">Personal Project Card</small>
               <hr className="articleProject__line" />
 
-              <h2 className="articleProject__title">Elegant Workspace</h2>
-              <p className="articleProject__slogan">Diseños Exclusivos</p>
+              <h2 className="articleProject__title">{name || 'Elegant Workspace'}</h2>
+              <p className="articleProject__slogan">{slogan || 'Diseños Exclusivos'}</p>
               <p className="articleProject__desc">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Libero, delectus? Voluptates at hic aliquam porro ad suscipit
-                harum laboriosam saepe earum doloribus aperiam, ullam culpa
-                accusantium placeat odit corrupti ipsum!
+                {desc || 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero delectus Voluptates at hic aliquam porro ad suscipit harum laboriosam saepe earum doloribus aperiam, ullam culpa accusantium placeat odit corrupti ipsum!'}
               </p>
               <div className="articleProject__technologies">
-                <p className="articleProject__technologies--text">React JS, MongoDB</p>
+                <p className="articleProject__technologies--text">{technologies || 'React JS, MongoDB'}</p>
               </div>
             </article>
 
             <article className="info-author">
               <img className="info-author__image" src={user} alt="" />
-              <p className="info-author__job">Full Stack Developer</p>
-              <p className="info-author__name">Emmelie Björklund</p>
+              <p className="info-author__job">{job || 'Full Stack Developer'}</p>
+              <p className="info-author__name">{author || 'Emmelie Björklund'}</p>
             </article>
           </section>
         </section>
@@ -59,6 +88,8 @@ function App() {
               placeholder="Nombre del proyecto"
               name="name"
               id="name"
+              value={name}
+              onChange={handleInput}
             />
             <input
               className="form__project--input"
@@ -66,6 +97,8 @@ function App() {
               name="slogan"
               id="slogan"
               placeholder="Slogan"
+              value={slogan}
+              onChange={handleInput}
             />
           <div>
             <input
@@ -74,6 +107,8 @@ function App() {
               name="repo"
               id="repo"
               placeholder="Repo"
+              value={repo}
+              onChange={handleInput}
             />
             <input
               className="form__project--input"
@@ -81,6 +116,8 @@ function App() {
               placeholder="Demo"
               name="demo"
               id="demo"
+              value={demo}
+              onChange={handleInput}
             />
           </div>
             <input
@@ -89,6 +126,8 @@ function App() {
               placeholder="Tecnologías"
               name="technologies"
               id="technologies"
+              value={technologies}
+              onChange={handleInput}
             />
             <textarea
               className="form__project--textarea"
@@ -96,6 +135,8 @@ function App() {
               placeholder="Descripción"
               name="desc"
               id="desc"
+              value={desc}
+              onChange={handleInput}
             ></textarea>
           </fieldset>
 
@@ -111,6 +152,8 @@ function App() {
               placeholder="Nombre"
               name="author"
               id="author"
+              value={author}
+              onChange={handleInput}
             />
             <input
               className="form__author--input"
@@ -118,6 +161,8 @@ function App() {
               placeholder="Trabajo"
               name="job"
               id="job"
+              value={job}
+              onChange={handleInput}
             />
           </fieldset>
 
@@ -133,7 +178,7 @@ function App() {
 
           <section className="form__card">
             <span className=""> La tarjeta ha sido creada: </span>
-            <a href="" className="" target="_blank" rel="noreferrer"> </a>
+            {/* <a href="" className="" target="_blank" rel="noreferrer"> </a> */}
           </section>
         </section>
       </main>
