@@ -3,22 +3,26 @@
     flex-direction: column;
     align-items: center;
     padding-top: 55px;
+        @media (min-width: $breakpoint-tablet) {
+            flex-direction: row;
+            align-items: flex-start;
+            padding-top: 0px;
+        }
     .preview {
         width: 90%;
         @media (min-width: $breakpoint-tablet) {
                 width: 60%;
-                height: 100%;
                 padding: 20px;
             }
         .image {
             object-fit: cover;
-                width: 100%;
-                height: 377px;
-                margin-bottom: 50px;
-            
-                @media (min-width: $breakpoint-tablet) {
-                    margin-bottom: 0px;
-                }
+            width: 100%;
+            height: 377px;
+            margin-bottom: 50px;
+            box-shadow: 0px 10px 10px black;
+            @media (min-width: $breakpoint-tablet) {
+                height: 636px;
+            }
         }    
         .author {
             background-color: white;
@@ -36,11 +40,12 @@
             height: 214px;
             
                 @media (min-width: $breakpoint-tablet) {
-                    padding: 30px;
+                    padding: 33px 25px 40px 25px;
                     width: 90%;
                     height: 312px;
                     gap: 40px;
                     transform: translateY(-100px);
+                    max-width: 500px;
                 }
 
             .articleProject {
@@ -50,9 +55,9 @@
                         text-align: center;
                         line-height: 9.4px;
                         color: #302c42;
-                            @media (min-width: $breakpoint-tablet) {
-                                    font-size: 14px;
-                                }
+                            @media (min-width: $breakpoint-tablet){
+                                font-size: 10px;
+                            }
                     }
                     &__line{
                         width: 100%;
@@ -71,7 +76,7 @@
                         color: black;
                         margin-top: 10px;
                             @media (min-width: $breakpoint-tablet) {
-                                    font-size: 20px;
+                                    font-size: 24px;
                                     margin-bottom: 10px;
                             }
                     }
@@ -82,16 +87,17 @@
                         margin-bottom: 10px;
                         color: #575757;
                         font-weight: 500;
-                            @media (min-width: $breakpoint-tablet) {
-                                font-size: 14px;
+                            @media (min-width: $breakpoint-tablet){
+                                font-size: 16px;
                             }
                     }
                     &__desc{
                         font-size: 8px;
                         margin-bottom: 10px;
                         line-height: 14.1px;
-                            @media (min-width: $breakpoint-tablet) {
-                                font-size: 12px;
+                            @media (min-width: $breakpoint-tablet){
+                                font-size: 10px;
+                                line-height: 17.6px;
                             }
                     }
                     &__technologies{
@@ -103,12 +109,11 @@
                         justify-content: flex-start;
                         align-items: center;
                         gap: 23px;
-                            @media (min-width: $breakpoint-tablet) {
+                            @media (min-width: $breakpoint-tablet){
                                     background-color: lightgray;
                                     border-radius: 20px;
-                                    font-size: 14px;
+                                    font-size: 12px;
                                     padding: 10px;
-                                    width: 70%;
                                 }
                             &--text {
                                 font-size: 8px;
@@ -134,8 +139,8 @@
                         height: 70.5px;
                             @media (min-width: $breakpoint-tablet) {
                                 border-radius: 50%;
-                                width: 80px;
-                                height: 110px;
+                                width: 109px;
+                                height: 109px;
                             }
                     }
                     &__job {
@@ -144,7 +149,7 @@
                         font-size: 10px;
                         font-family: $font__card;
                             @media (min-width: $breakpoint-tablet) {
-                                font-size: 14px;
+                                font-size: 16px;
                             }
 
                     }
@@ -154,7 +159,7 @@
                         font-weight: 900;
                         color: rgba(0, 0, 0, 0.8);
                             @media (min-width: $breakpoint-tablet) {
-                                font-size: 16px;
+                                font-size: 18px;
                             }
                     }
             }
@@ -166,11 +171,14 @@
         padding: 18px 40px 0 40px;
         background: radial-gradient(circle, rgba(64, 58, 95, 1) 13%, rgba(33, 30, 46, 1) 61%);
         font-family: $font__form;
-        @media (min-width: $breakpoint-tablet) {
-            width: 40%;
-            padding: 0px;
-            margin-top: 25px;
-        }
+            @media (min-width: $breakpoint-tablet) {
+                width: 40%;
+                padding: 0px;
+                padding-left: 35px;
+                padding-right: 35px;
+                margin-top: 20px;
+                height: 88vh;
+            }
 
         &__title {
             color: #ffffff;
@@ -218,9 +226,10 @@
                     padding-left: 15px;
                     padding-top: 5px;
                 }
-                &--div {
-                    flex-direction: row;
-                }
+               /*  &--div {
+                    display: grid;
+                    grid-template-columns: 50% 50%;
+                } */
                 &--textarea {
                     background-color: transparent;
                     border: solid 2px white;
@@ -282,12 +291,6 @@
             padding: 20px;
         }
     }
-    
-    @media (min-width: $breakpoint-tablet) {
-        flex-direction: row;
-        align-items:flex-start;
-        padding-top: 0px;
-    }
 }
 
 
@@ -313,4 +316,16 @@
 
 .hidden {
     display: none;
+}
+
+.fa-globe {
+    font-size: 15px;
+}
+
+.fa-github {
+    font-size: 15px;
+}
+
+.error {
+    color: red;
 }

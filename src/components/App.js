@@ -14,12 +14,20 @@ function App() {
   const [desc, setDesc] = useState("");
   const [author, setAuthor] = useState("");
   const [job, setJob] = useState("");
+  const [error, setError] = useState("");
 
   const handleInput = (ev) => {
     const inputValue = ev.target.value;
     const inputName = ev.target.name;
+    console.log(inputValue)
     if(inputName === 'name') {
+      if(inputValue === '') {
+        setError('Introduce tus datos');
+      } else {
+        setError("");
+      }
       setName(inputValue);
+      
     } else if(inputName === 'slogan') {
       setSlogan(inputValue);
     } else if(inputName === 'repo') {
@@ -95,7 +103,9 @@ function App() {
               id="name"
               value={name}
               onChange={handleInput}
+              required
             />
+            <span className='error'>{error}</span>
             <input
               className="form__project--input"
               type="text"
@@ -105,16 +115,18 @@ function App() {
               value={slogan}
               onChange={handleInput}
             />
-          <div className='form__project--div'>
+          {/* <div className='form__project--div'> */}
             <input
-              className="form__project--input"
+              className="form__project--input "
               type="text"
               name="repo"
               id="repo"
               placeholder="Repo"
               value={repo}
               onChange={handleInput}
+              required
             />
+            <span></span>
             <input
               className="form__project--input"
               type="text"
@@ -123,8 +135,10 @@ function App() {
               id="demo"
               value={demo}
               onChange={handleInput}
+              required
             />
-          </div>
+            <span></span>
+          {/* </div> */}
             <input
               className="form__project--input"
               type="text"
@@ -142,7 +156,9 @@ function App() {
               id="desc"
               value={desc}
               onChange={handleInput}
+              required
             ></textarea>
+            <span></span>
           </fieldset>
 
           <section className="form__ask-info">
@@ -159,7 +175,9 @@ function App() {
               id="author"
               value={author}
               onChange={handleInput}
+              required
             />
+            <span></span>
             <input
               className="form__author--input"
               type="text"
@@ -168,7 +186,9 @@ function App() {
               id="job"
               value={job}
               onChange={handleInput}
+              required
             />
+            <span></span>
           </fieldset>
 
           <section className="form__buttons-img">
