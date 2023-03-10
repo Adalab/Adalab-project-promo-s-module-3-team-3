@@ -3,6 +3,7 @@ import user from '../images/user.jpeg';
 import logo from '../images/logo-adalab.png';
 import '../styles/App.scss';
 import { useState } from 'react';
+import dataApi from '../services/api';
 
 function App() {
   const [dataError, setDataError] = useState({
@@ -10,7 +11,7 @@ function App() {
     repo: '',
     demo: '',
     desc: '',
-    author: '',
+    autor: '',
     job: '',
   });
   const [data, setData] = useState({
@@ -20,10 +21,20 @@ function App() {
     demo: '',
     technologies: '',
     desc: '',
-    author: '',
+    autor: '',
     job: '',
+    image: 'https://images.pexels.com/photos/372787/pexels-photo-372787.jpeg',
+    photo: 'https://images.pexels.com/photos/372787/pexels-photo-372787.jpeg',
   });
+  const [url, setUrl] = useState('');
 
+  const handleClickCreateCard = (ev) => {
+    ev.preventDefault();
+    dataApi(data).then((info) => {
+      //console.log(info);
+      setUrl(info.cardURL);
+    });
+  };
   const handleInput = (ev) => {
     const inputValue = ev.target.value;
     const inputName = ev.target.name;
@@ -66,13 +77,13 @@ function App() {
         setDataError({ ...dataError, desc: '' });
       }
       setData({ ...data, desc: inputValue });
-    } else if (inputName === 'author') {
+    } else if (inputName === 'autor') {
       if (inputValue === '') {
-        setDataError({ ...dataError, author: 'Introduce tu nombre' });
+        setDataError({ ...dataError, autor: 'Introduce tu nombre' });
       } else {
-        setDataError({ ...dataError, author: '' });
+        setDataError({ ...dataError, autor: '' });
       }
-      setData({ ...data, author: inputValue });
+      setData({ ...data, autor: inputValue });
     } else if (inputName === 'job') {
       if (inputValue === '') {
         setDataError({ ...dataError, job: 'Introduce tu profesión' });
@@ -96,7 +107,7 @@ function App() {
         <section className="preview">
           <img className="image" src={cover} alt="" />
 
-          <section className="author">
+          <section className="autor">
             <article className="articleProject">
               <small className="articleProject__subtitle">
                 Personal Project Card
@@ -124,13 +135,13 @@ function App() {
               </div>
             </article>
 
-            <article className="info-author">
-              <img className="info-author__image" src={user} alt="" />
-              <p className="info-author__job">
+            <article className="info-autor">
+              <img className="info-autor__image" src={user} alt="" />
+              <p className="info-autor__job">
                 {data.job || 'Full Stack Developer'}
               </p>
-              <p className="info-author__name">
-                {data.author || 'Emmelie Björklund'}
+              <p className="info-autor__name">
+                {data.autor || 'Emmelie Björklund'}
               </p>
             </article>
           </section>
@@ -220,20 +231,20 @@ function App() {
             <hr className="form__ask-info--line" />
           </section>
 
-          <fieldset className="form__author">
+          <fieldset className="form__autor">
             <input
-              className="form__author--input"
+              className="form__autor--input"
               type="text"
               placeholder="Nombre"
-              name="author"
-              id="author"
-              value={data.author}
+              name="autor"
+              id="autor"
+              value={data.autor}
               onChange={handleInput}
               required
             />
-            <span className="error">{dataError.author}</span>
+            <span className="error">{dataError.autor}</span>
             <input
-              className="form__author--input"
+              className="form__autor--input"
               type="text"
               placeholder="Trabajo"
               name="job"
@@ -256,7 +267,7 @@ function App() {
           <section className="form__buttons-img">
             <button
               className="form__buttons-img--btn-large"
-              onClick="{handleClickCreateCard}"
+              onClick={handleClickCreateCard}
             >
               Crear Tarjeta
             </button>
@@ -264,7 +275,9 @@ function App() {
 
           <section className="form__card">
             <span className=""> La tarjeta ha sido creada: </span>
-            {/* <a href="" className="" target="_blank" rel="noreferrer"> </a> */}
+            <a href={url} className="" target="_blank">
+              {url}
+            </a>
           </section>
         </section>
       </main>
