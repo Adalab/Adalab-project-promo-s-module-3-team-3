@@ -1,6 +1,6 @@
 import cover from '../images/proyecto.jpg';
 import user from '../images/user.jpeg';
-import logo from '../images/logo-adalab.png';
+import logo from '../images/logo.png';
 import '../styles/App.scss';
 import { useState } from 'react';
 import dataApi from '../services/api';
@@ -62,6 +62,8 @@ function App() {
     } else if (inputName === 'repo') {
       if (inputValue === '') {
         setDataError({ ...dataError, repo: 'Introduce el enlace de tu repo' });
+      } else if (!data.repo.startsWith('https://')) {
+        setDataError({ ...dataError, repo: 'Introduce un enlace válido que empiece por https://'})
       } else {
         setDataError({ ...dataError, repo: '' });
       }
@@ -69,7 +71,10 @@ function App() {
     } else if (inputName === 'demo') {
       if (inputValue === '') {
         setDataError({ ...dataError, demo: 'Introduce el enlace de tu demo' });
-      } else {
+      } else if (!data.demo.startsWith('https://')) {
+        setDataError({ ...dataError, demo: 'Introduce un enlace válido que empiece por https://'})
+      }
+      else {
         setDataError({ ...dataError, demo: '' });
       }
       setData({ ...data, demo: inputValue });
@@ -142,8 +147,8 @@ function App() {
                   {data.technologies || 'React JS - HTML - CSS'}
                 </p>
                 <span className="articleProject__technologies--icons">
-                  <a href={data.demo.includes('https://')} target="_blank" className='link__icons' rel='noreferrer'><i className="fa-solid fa-globe"></i></a>
-                  <a href={data.repo} target="_blank" className='link__icons' rel='noreferrer'><i className="fa-brands fa-github"></i></a>
+                  <a href={data.demo.startsWith('https://') ? data.demo : null} target="_blank" className='link__icons' rel='noreferrer'><i className="fa-solid fa-globe"></i></a>
+                  <a href={data.repo.startsWith('https://') ? data.repo : null} target="_blank" className='link__icons' rel='noreferrer'><i className="fa-brands fa-github"></i></a>
                 </span>
               </div>
             </article>
