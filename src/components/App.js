@@ -1,4 +1,4 @@
-import cover from '../images/cover.jpeg';
+import cover from '../images/proyecto.jpg';
 import user from '../images/user.jpeg';
 import logo from '../images/logo-adalab.png';
 import '../styles/App.scss';
@@ -8,8 +8,10 @@ import dataApi from '../services/api';
 function App() {
   const [dataError, setDataError] = useState({
     name: '',
+    slogan: '',
     repo: '',
     demo: '',
+    technologies: '',
     desc: '',
     autor: '',
     job: '',
@@ -27,18 +29,19 @@ function App() {
     photo: 'https://images.pexels.com/photos/372787/pexels-photo-372787.jpeg',
   });
   const [url, setUrl] = useState('');
+  const [show, setShow] = useState(false);
 
   const handleClickCreateCard = (ev) => {
     ev.preventDefault();
     dataApi(data).then((info) => {
-      //console.log(info);
+      console.log(info);
       setUrl(info.cardURL);
+      setShow(info.success);
     });
   };
   const handleInput = (ev) => {
     const inputValue = ev.target.value;
     const inputName = ev.target.name;
-    console.log(inputValue);
     if (inputName === 'name') {
       if (inputValue === '') {
         setDataError({
@@ -50,6 +53,11 @@ function App() {
       }
       setData({ ...data, name: inputValue });
     } else if (inputName === 'slogan') {
+        if (inputValue === '') {
+          setDataError({ ...dataError, slogan: 'Introduce tu slogan' });
+        } else {
+          setDataError({ ...dataError, slogan: '' });
+        }
       setData({ ...data, slogan: inputValue });
     } else if (inputName === 'repo') {
       if (inputValue === '') {
@@ -66,6 +74,11 @@ function App() {
       }
       setData({ ...data, demo: inputValue });
     } else if (inputName === 'technologies') {
+        if (inputValue === '') {
+          setDataError({ ...dataError, technologies: 'Introduce las tecnologías utilizadas' });
+        } else {
+          setDataError({ ...dataError, technologies: '' });
+        }
       setData({ ...data, technologies: inputValue });
     } else if (inputName === 'desc') {
       if (inputValue === '') {
@@ -98,7 +111,7 @@ function App() {
       <header className="header">
         <p className="header__p">
           <i className="header__p--i fa-solid fa-laptop-code"></i>
-          <span className="header__p--span">Proyectos Molones</span>
+          <span className="header__p--span">Proyectos y ya estaría</span>
         </p>
         <img className="header__img" src={logo} alt="" />
       </header>
@@ -129,8 +142,8 @@ function App() {
                   {data.technologies || 'React JS - HTML - CSS'}
                 </p>
                 <span className="articleProject__technologies--icons">
-                  <i className="fa-solid fa-globe"></i>
-                  <i className="fa-brands fa-github"></i>
+                  <a href={data.demo.includes('https://')} target="_blank" className='link__icons' rel='noreferrer'><i className="fa-solid fa-globe"></i></a>
+                  <a href={data.repo} target="_blank" className='link__icons' rel='noreferrer'><i className="fa-brands fa-github"></i></a>
                 </span>
               </div>
             </article>
@@ -178,6 +191,7 @@ function App() {
               value={data.slogan}
               onChange={handleInput}
             />
+            <span className="error">{dataError.slogan}</span>
             {/* <div className='form__project--div'> */}
             <input
               className="form__project--input "
@@ -211,6 +225,7 @@ function App() {
               value={data.technologies}
               onChange={handleInput}
             />
+            <span className="error">{dataError.technologies}</span>
             <textarea
               className="form__project--textarea"
               type="text"
@@ -273,9 +288,9 @@ function App() {
             </button>
           </section>
 
-          <section className="form__card">
+          <section className={show ? "form__card" : "form__card hidden"}>
             <span className=""> La tarjeta ha sido creada: </span>
-            <a href={url} className="" target="_blank">
+            <a href={url} className="btn__url" target="_blank">
               {url}
             </a>
           </section>

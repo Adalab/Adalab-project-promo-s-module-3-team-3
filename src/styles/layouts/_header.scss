@@ -5,19 +5,19 @@
     align-items: center;
         &__p {
             margin-left: 20px;
-            width: 200px;
+            width: 250px;
             display: flex;
             align-items: center;
                 &--i {
-                    color: white;
+                    color: $color__text;
                     font-size: 30px;
                     padding-right: 7px;
                 }
                 &--span {
-                    color: rgba(255, 255, 255, 0.5);
+                    color: $color__text;
                     font-size: 14px;
                     font-family: $font__text;
-                    font-weight: 300;
+                    font-weight: 500;
                 }
         }
         &__img {
