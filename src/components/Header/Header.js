@@ -1,4 +1,6 @@
 import logo from '../../images/logo.png'
+import '../../styles/layouts/Header.scss'
+
 
 const Header = () => {
     return (
@@ -12,4 +14,4 @@ const Header = () => {
     )
 }
 
-export default Header
+export default Header;

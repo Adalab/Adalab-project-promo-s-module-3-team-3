@@ -1,6 +1,7 @@
 import Autora from './Autora';
 import Buttons from './Buttons';
 import Project from './Project';
+import '../../styles/layouts/Form.scss'
 
 const Form = ({
   data,

@@ -1,5 +1,6 @@
 import Image from "./Image";
 import Card from "./Card";
+import '../../styles/layouts/Preview.scss'
 
 const Preview = ({ data }) => {
   return (

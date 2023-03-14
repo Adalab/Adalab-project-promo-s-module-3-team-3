@@ -3,8 +3,8 @@ import { useState } from "react";
 import dataApi from "../services/api";
 
 import Header from "../components/Header/Header";
-import Preview from "../components/Preview/Preview";
-import Form from "../components/Form/Form";
+import Main from "./Main";
+
 
 function App() {
   const [dataError, setDataError] = useState({
@@ -123,18 +123,12 @@ function App() {
   return (
     <div className="container">
       <Header></Header>
-
-      <main className="main">
-        <Preview data={data}></Preview>
-        <Form
-          data={data}
+      <Main data={data}
           dataError={dataError}
           handleInput={handleInput}
           handleClickCreateCard={handleClickCreateCard}
           show={show}
-          url={url}
-        ></Form>
-      </main>
+          url={url}></Main>
     </div>
   );
 }
