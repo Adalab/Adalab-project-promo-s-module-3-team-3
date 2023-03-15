@@ -5,7 +5,6 @@ import dataApi from "../services/api";
 import Header from "../components/Header/Header";
 import Main from "./Main";
 
-
 function App() {
   const [dataError, setDataError] = useState({
     name: "",
@@ -40,95 +39,38 @@ function App() {
       setShow(info.success);
     });
   };
+
+  const validateInput = (name, value) => {
+    if (value === "") {
+      return `Introduce ${name}`;
+    }
+    if (name === "repo" || name === "demo") {
+      if (!(value.startsWith("https://") || value.startsWith("http://"))) {
+        //todo No hagas esto y no hagas lo otro NO está OK (!value.startsWith("https://")  y !value.startsWith("http://") , debe ser no hagas esto o lo otro (como lo tenemos ahora está OK).
+        return "Introduce un enlace válido que empiece por https:// o http://";
+      }
+    }
+    return "";
+  };
+
   const handleInput = (ev) => {
     const inputValue = ev.target.value;
     const inputName = ev.target.name;
-    if (inputName === "name") {
-      if (inputValue === "") {
-        setDataError({
-          ...dataError,
-          name: "Introduce el nombre de tu proyecto",
-        });
-      } else {
-        setDataError({ ...dataError, name: "" });
-      }
-      setData({ ...data, name: inputValue });
-    } else if (inputName === "slogan") {
-      if (inputValue === "") {
-        setDataError({ ...dataError, slogan: "Introduce tu slogan" });
-      } else {
-        setDataError({ ...dataError, slogan: "" });
-      }
-      setData({ ...data, slogan: inputValue });
-    } else if (inputName === "repo") {
-      if (inputValue === "") {
-        setDataError({ ...dataError, repo: "Introduce el enlace de tu repo" });
-      } else if (!data.repo.startsWith("https://")) {
-        setDataError({
-          ...dataError,
-          repo: "Introduce un enlace válido que empiece por https://",
-        });
-      } else {
-        setDataError({ ...dataError, repo: "" });
-      }
-      setData({ ...data, repo: inputValue });
-    } else if (inputName === "demo") {
-      if (inputValue === "") {
-        setDataError({ ...dataError, demo: "Introduce el enlace de tu demo" });
-      } else if (!data.demo.startsWith("https://")) {
-        setDataError({
-          ...dataError,
-          demo: "Introduce un enlace válido que empiece por https://",
-        });
-      } else {
-        setDataError({ ...dataError, demo: "" });
-      }
-      setData({ ...data, demo: inputValue });
-    } else if (inputName === "technologies") {
-      if (inputValue === "") {
-        setDataError({
-          ...dataError,
-          technologies: "Introduce las tecnologías utilizadas",
-        });
-      } else {
-        setDataError({ ...dataError, technologies: "" });
-      }
-      setData({ ...data, technologies: inputValue });
-    } else if (inputName === "desc") {
-      if (inputValue === "") {
-        setDataError({
-          ...dataError,
-          desc: "Introduce la descripción de tu proyecto",
-        });
-      } else {
-        setDataError({ ...dataError, desc: "" });
-      }
-      setData({ ...data, desc: inputValue });
-    } else if (inputName === "autor") {
-      if (inputValue === "") {
-        setDataError({ ...dataError, autor: "Introduce tu nombre" });
-      } else {
-        setDataError({ ...dataError, autor: "" });
-      }
-      setData({ ...data, autor: inputValue });
-    } else if (inputName === "job") {
-      if (inputValue === "") {
-        setDataError({ ...dataError, job: "Introduce tu profesión" });
-      } else {
-        setDataError({ ...dataError, job: "" });
-      }
-      setData({ ...data, job: inputValue });
-    }
+    const error = validateInput(inputName, inputValue);
+    setData({ ...data, [inputName]: inputValue });
+    setDataError({ ...dataError, [inputName]: error });
   };
   return (
     <div className="container">
       <Header></Header>
-      <Main data={data}
-          dataError={dataError}
-          handleInput={handleInput}
-          handleClickCreateCard={handleClickCreateCard}
-          show={show}
-          url={url}></Main>
+      <Main
+        data={data}
+        dataError={dataError}
+        handleInput={handleInput}
+        handleClickCreateCard={handleClickCreateCard}
+        show={show}
+        url={url}
+      ></Main>
     </div>
   );
 }
