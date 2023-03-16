@@ -28,7 +28,7 @@ const CreateProject = () => {
     image: 'https://images.pexels.com/photos/372787/pexels-photo-372787.jpeg',
     photo: 'https://images.pexels.com/photos/372787/pexels-photo-372787.jpeg',
   });
-  const [cards, setCards] = useState(objectToExport.get('cardList', []));
+/*   const [cards, setCards] = useState(objectToExport.get('cardList', [])); */
 
   const [url, setUrl] = useState('');
   const [show, setShow] = useState(false);
@@ -37,13 +37,13 @@ const CreateProject = () => {
     ev.preventDefault();
 
     dataApi(data).then((info) => {
-      const mergeList = cards.push(data);
+     /*  const mergeList = cards.push(data); */
       setUrl(info.cardURL);
       setShow(info.success);
-      setCards(mergeList);
-      objectToExport.set('cardList', cards);
+      /* setCards(mergeList); */
+       /* objectToExport.set('cardList', setCards(...cards, data));  */
 
-      console.log(objectToExport.get('cardList'));
+      console.log();
     });
   };
 
