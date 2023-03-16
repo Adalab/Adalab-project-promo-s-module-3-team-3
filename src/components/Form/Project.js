@@ -7,6 +7,7 @@
       </section>
 
       <fieldset className="form__project">
+        <label htmlFor="name">Nombre:</label>
         <input
           className="form__project--input"
           type="text"
@@ -18,6 +19,7 @@
           required
         />
         <span className="error">{dataError.name}</span>
+        <label htmlFor="slogan">Slogan:</label>
         <input
           className="form__project--input"
           type="text"
@@ -29,21 +31,23 @@
         />
         <span className="error">{dataError.slogan}</span>
         {/* <div className='form__project--div'> */}
+        <label htmlFor="repo">Repo:</label>
         <input
           className="form__project--input "
           type="text"
           name="repo"
           id="repo"
-          placeholder="Repo"
+          placeholder="Ej. https://github.com/Adalab/..."
           value={data.repo}
           onChange={handleInput}
           required
         />
         <span className="error">{dataError.repo}</span>
+        <label htmlFor="demo">Demo:</label>
         <input
           className="form__project--input"
           type="text"
-          placeholder="Demo"
+          placeholder="Ej. https://beta.adalab.es/..."
           name="demo"
           id="demo"
           value={data.demo}
@@ -52,6 +56,7 @@
         />
         <span className="error">{dataError.demo}</span>
         {/* </div> */}
+        <label htmlFor="technologies">Tecnologías:</label>
         <input
           className="form__project--input"
           type="text"
@@ -62,6 +67,7 @@
           onChange={handleInput}
         />
         <span className="error">{dataError.technologies}</span>
+        <label htmlFor="desc">Descripción:</label>
         <textarea
           className="form__project--textarea"
           type="text"

@@ -7,6 +7,7 @@ const Autora = ({data, dataError, handleInput}) => {
       </section>
 
       <fieldset className="form__autor">
+        <label htmlFor="autor">Nombre:</label>
         <input
           className="form__autor--input"
           type="text"
@@ -18,6 +19,7 @@ const Autora = ({data, dataError, handleInput}) => {
           required
         />
         <span className="error">{dataError.autor}</span>
+        <label htmlFor="job">Trabajo:</label>
         <input
           className="form__autor--input"
           type="text"
