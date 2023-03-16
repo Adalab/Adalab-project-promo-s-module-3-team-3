@@ -1,6 +1,7 @@
 import user from "../../images/user.jpeg";
+import '../../styles/layouts/Preview.scss'
 
-const Card = ({ data }) => {
+const Card = ({data}) => {
   return (
     <section className="autor">
       <article className="articleProject">
