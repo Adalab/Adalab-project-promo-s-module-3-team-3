@@ -3,7 +3,6 @@ import Form from './Form/Form';
 import '../styles/layouts/Main.scss';
 import { useState } from 'react';
 import dataApi from '../services/api';
-import objectToExport from '../services/LocalStorage';
 
 const CreateProject = ({cards, setCards}) => {
   const [dataError, setDataError] = useState({
@@ -39,7 +38,6 @@ const CreateProject = ({cards, setCards}) => {
       setUrl(info.cardURL);
       setShow(info.success);
       setCards([...cards, data]);
-      /* objectToExport.set('cardList', data);   */
     });
   };
 

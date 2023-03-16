@@ -12,6 +12,7 @@ const LandingPage = ({cards}) => {
       <Link to="/CreateProject"><button className='landingPage__newBtn'>NUEVO PROYECTO</button> </Link>
       <button>VER PROYECTOS</button>  
       <div className="preview">{cards.map((card, index) => <Card data={card} key={index}/>)}</div>
+      {cards.length === 0 && <p>No hay tarjetas que mostrar</p>}
     </main>
   );
 };
