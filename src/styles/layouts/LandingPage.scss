@@ -1,0 +1,10 @@
+@import '../core/variables.scss';
+
+.landingPage {
+    background-color: $color__green-dark;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
