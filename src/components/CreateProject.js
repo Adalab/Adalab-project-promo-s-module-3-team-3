@@ -32,13 +32,37 @@ const CreateProject = ({cards, setCards}) => {
   const [url, setUrl] = useState('');
   const [show, setShow] = useState(false);
 
+  const validateAllInputs = () => {
+    const newDataError = dataError;
+    Object.keys(data).map((item) => {
+      const error = validateInput(item, data[item]);
+      newDataError[item] = error;
+      return  null;
+    });
+    setDataError({...newDataError});
+  }
+
+  const checkErrors = () => {
+    const result = Object.keys(dataError).map((item) => {
+      return dataError[item] === ''
+    })
+    if(result.find(item => item === false) === false) {
+      return false
+    } else {
+      return true
+    }
+  }
+
   const handleClickCreateCard = (ev) => {
     ev.preventDefault();
-    dataApi(data).then((info) => {
+    validateAllInputs();
+    if(checkErrors()){
+      dataApi(data).then((info) => {
       setUrl(info.cardURL);
       setShow(info.success);
       setCards([...cards, data]);
     });
+    } 
   };
 
   const validateInput = (name, value) => {
