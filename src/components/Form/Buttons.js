@@ -14,16 +14,19 @@ const Buttons = ({
         <GetAvatar
           className="form__buttons-img--btn"
           text="Subir foto de autora"
+          title="Subir foto de autora"
           updateAvatar={updateImages}
         ></GetAvatar>
         <GetAvatar
           className="form__buttons-img--btn"
           text="Subir foto de proyecto"
+          title="Subir foto de proyecto"
           updateAvatar={updatePhoto}
         ></GetAvatar>
       </section>
       <section className="form__buttons-img">
         <button
+          title="Haz click para crear tu tarjeta"
           className="form__buttons-img--btn-large"
           onClick={handleClickCreateCard}
         >
