@@ -1,7 +1,7 @@
-import Autora from './Autora';
-import Buttons from './Buttons';
-import Project from './Project';
-import '../../styles/layouts/Form.scss'
+import Autora from "./Autora";
+import Buttons from "./Buttons";
+import Project from "./Project";
+import "../../styles/layouts/Form.scss";
 
 const Form = ({
   data,
@@ -10,22 +10,34 @@ const Form = ({
   handleClickCreateCard,
   show,
   url,
+  updatePhoto,
+  updateImages,
 }) => {
   return (
     <section className="form">
       <h2 className="form__title">Información</h2>
 
-      <Project data={data}
+      <Project
+        data={data}
         dataError={dataError}
-        handleInput={handleInput}></Project>
+        handleInput={handleInput}
+      ></Project>
 
-      <Autora data={data}
+      <Autora
+        data={data}
         dataError={dataError}
-        handleInput={handleInput}></Autora>
+        handleInput={handleInput}
+      ></Autora>
 
-      <Buttons handleClickCreateCard={handleClickCreateCard}
+      <Buttons
+        handleClickCreateCard={handleClickCreateCard}
         show={show}
-        url={url}> </Buttons>
+        url={url}
+        updatePhoto={updatePhoto}
+        updateImages={updateImages}
+      >
+        {" "}
+      </Buttons>
     </section>
   );
 };

@@ -1,35 +1,39 @@
-import Preview from './Preview/Preview';
-import Form from './Form/Form';
-import '../styles/layouts/Main.scss';
-import { useState } from 'react';
-import dataApi from '../services/api';
+import Preview from "./Preview/Preview";
+import Form from "./Form/Form";
+import "../styles/layouts/Main.scss";
+import { useState } from "react";
+import dataApi from "../services/api";
+// import GetAvatar from "../components/getAvatar/GetAvatar";
+import user from "../images/user.jpeg";
+import cover from "../images/proyecto.jpg";
 
-const CreateProject = ({cards, setCards}) => {
+const CreateProject = ({ cards, setCards }) => {
   const [dataError, setDataError] = useState({
-    name: '',
-    slogan: '',
-    repo: '',
-    demo: '',
-    technologies: '',
-    desc: '',
-    autor: '',
-    job: '',
+    name: "",
+    slogan: "",
+    repo: "",
+    demo: "",
+    technologies: "",
+    desc: "",
+    autor: "",
+    job: "",
+    image: "",
+    photo: "",
   });
   const [data, setData] = useState({
-    name: '',
-    slogan: '',
-    repo: '',
-    demo: '',
-    technologies: '',
-    desc: '',
-    autor: '',
-    job: '',
-    image: 'https://images.pexels.com/photos/372787/pexels-photo-372787.jpeg',
-    photo: 'https://images.pexels.com/photos/372787/pexels-photo-372787.jpeg',
+    name: "",
+    slogan: "",
+    repo: "",
+    demo: "",
+    technologies: "",
+    desc: "",
+    autor: "",
+    job: "",
+    image: user,
+    photo: cover,
   });
 
-
-  const [url, setUrl] = useState('');
+  const [url, setUrl] = useState("");
   const [show, setShow] = useState(false);
 
   const validateAllInputs = () => {
@@ -37,45 +41,52 @@ const CreateProject = ({cards, setCards}) => {
     Object.keys(data).map((item) => {
       const error = validateInput(item, data[item]);
       newDataError[item] = error;
-      return  null;
+      return null;
     });
-    setDataError({...newDataError});
-  }
+    setDataError({ ...newDataError });
+  };
 
   const checkErrors = () => {
     const result = Object.keys(dataError).map((item) => {
-      return dataError[item] === ''
-    })
-    if(result.find(item => item === false) === false) {
-      return false
+      return dataError[item] === "";
+    });
+    if (result.find((item) => item === false) === false) {
+      return false;
     } else {
-      return true
+      return true;
     }
-  }
+  };
+
+  const updateImages = (avatar) => {
+    setData({ ...data, image: avatar });
+  };
+  const updatePhoto = (avatar) => {
+    setData({ ...data, photo: avatar });
+  };
 
   const handleClickCreateCard = (ev) => {
     ev.preventDefault();
     validateAllInputs();
-    if(checkErrors()){
+    if (checkErrors()) {
       dataApi(data).then((info) => {
-      setUrl(info.cardURL);
-      setShow(info.success);
-      setCards([...cards, data]);
-    });
-    } 
+        setUrl(info.cardURL);
+        setShow(info.success);
+        setCards([...cards, data]);
+      });
+    }
   };
 
   const validateInput = (name, value) => {
-    if (value === '') {
+    if (value === "") {
       return `Introduce ${name}`;
     }
-    if (name === 'repo' || name === 'demo') {
-      if (!(value.startsWith('https://') || value.startsWith('http://'))) {
+    if (name === "repo" || name === "demo") {
+      if (!(value.startsWith("https://") || value.startsWith("http://"))) {
         //todo No hagas esto y no hagas lo otro NO está OK (!value.startsWith("https://")  y !value.startsWith("http://") , debe ser no hagas esto o lo otro (como lo tenemos ahora está OK).
-        return 'Introduce un enlace válido que empiece por https:// o http://';
+        return "Introduce un enlace válido que empiece por https:// o http://";
       }
     }
-    return '';
+    return "";
   };
 
   const handleInput = (ev) => {
@@ -95,6 +106,8 @@ const CreateProject = ({cards, setCards}) => {
         handleClickCreateCard={handleClickCreateCard}
         show={show}
         url={url}
+        updatePhoto={updatePhoto}
+        updateImages={updateImages}
       ></Form>
     </main>
   );

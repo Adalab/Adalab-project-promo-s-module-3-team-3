@@ -105,12 +105,14 @@
         text-align: center;
 
         &--btn {
+            display: inline-block;
             width: 160px;
             margin-top: 10px;
+            box-sizing: border-box;
+            padding: 2px;
             color: white;
             text-align: center;
             border: none;
-
             height: 43px;
             background: linear-gradient(90deg, #26312e -1.57%, #69867d 98.43%);
             border-radius: 40px;

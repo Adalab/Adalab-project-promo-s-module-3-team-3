@@ -1,11 +1,11 @@
-import Image from "./Image";
+import Profile from "../getAvatar/Profile";
 import Card from "./Card";
-import '../../styles/layouts/Preview.scss'
+import "../../styles/layouts/Preview.scss";
 
-const Preview = ({ data }) => {
+const Preview = ({ data, cover }) => {
   return (
     <section className="preview">
-      <Image></Image>
+      <Profile avatar={data.photo} className="image"></Profile>
       <Card data={data}></Card>
     </section>
   );

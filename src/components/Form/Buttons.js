@@ -1,11 +1,26 @@
-const Buttons = ({handleClickCreateCard, show, url}) => {
-    return(
-        <>
-        <section className="form__buttons-img">
-        <button className="form__buttons-img--btn">
-          Subir foto de proyecto
-        </button>
-        <button className="form__buttons-img--btn">Subir foto de autora</button>
+import GetAvatar from "../getAvatar/GetAvatar";
+import "../../styles/layouts/Form.scss";
+
+const Buttons = ({
+  handleClickCreateCard,
+  show,
+  url,
+  updatePhoto,
+  updateImages,
+}) => {
+  return (
+    <>
+      <section className="form__buttons-img">
+        <GetAvatar
+          className="form__buttons-img--btn"
+          text="Subir foto de autora"
+          updateAvatar={updateImages}
+        ></GetAvatar>
+        <GetAvatar
+          className="form__buttons-img--btn"
+          text="Subir foto de proyecto"
+          updateAvatar={updatePhoto}
+        ></GetAvatar>
       </section>
       <section className="form__buttons-img">
         <button
@@ -21,8 +36,8 @@ const Buttons = ({handleClickCreateCard, show, url}) => {
           {url}
         </a>
       </section>
-      </>
-    )
-}
+    </>
+  );
+};
 
 export default Buttons;

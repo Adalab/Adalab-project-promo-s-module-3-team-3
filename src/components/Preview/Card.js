@@ -1,7 +1,9 @@
-import user from "../../images/user.jpeg";
-import '../../styles/layouts/Preview.scss'
+// import user from "../../images/user.jpeg";
+import "../../styles/layouts/Preview.scss";
+import Profile from "../getAvatar/Profile";
+import "../../styles/layouts/Card.scss";
 
-const Card = ({data}) => {
+const Card = ({ data }) => {
   return (
     <section className="autor">
       <article className="articleProject">
@@ -46,7 +48,8 @@ const Card = ({data}) => {
       </article>
 
       <article className="info-autor">
-        <img className="info-autor__image" src={user} alt="" />
+        {/* <img className="info-autor__image" src={user} alt="" /> */}
+        <Profile avatar={data.image} className="info-autor__image"></Profile>
         <p className="info-autor__job">{data.job || "Full Stack Developer"}</p>
         <p className="info-autor__name">{data.autor || "Emmelie Björklund"}</p>
       </article>
