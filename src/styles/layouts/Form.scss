@@ -102,29 +102,67 @@
     }
 
     &__buttons-img {
-        text-align: center;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
 
         &--btn {
             display: inline-block;
-            width: 160px;
+            text-align: center;
+            background-color: #7a9994;
+            border: 0 solid #E5E7EB;
+            font-family: $font__landing;
+            justify-content: center;
+            line-height: 1.75rem;
+            padding: .75rem 5rem;
+            position: relative;
+            width: 100%;
+            max-width: 360px;
+            font-size: 1rem;
+            font-weight: 500;
+            position: relative;
+            cursor: pointer;
+            transform: rotate(-2deg);
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
             margin-top: 10px;
             box-sizing: border-box;
             padding: 2px;
-            color: white;
-            text-align: center;
-            border: none;
-            height: 43px;
-            background: linear-gradient(90deg, #26312e -1.57%, #69867d 98.43%);
-            border-radius: 40px;
+            @media (min-width: 768px) {
+                padding: .75rem 2rem;
+                font-size: 1.25rem;
+            }
+            // color: white;
+            // text-align: center;
+            // border: none;
+            // height: 43px;
+            // background: linear-gradient(90deg, #26312e -1.57%, #69867d 98.43%);
+            // border-radius: 40px;
         }
-
+        &--btn:focus {
+            outline: 0;
+        }
+        &--btn:after {
+            content: '';
+            position: absolute;
+            border: 1px solid #000000;
+            bottom: 4px;
+            left: 4px;
+            width: calc(100% - 1px);
+            height: calc(100% - 1px);
+        }
+        &--btn:hover:after {
+            bottom: 2px;
+            left: 2px;
+        }
         &--btn-large {
             width: 160px;
             margin-top: 10px;
             color: white;
             text-align: center;
             border: none;
-
             height: 43px;
             background: linear-gradient(90deg, #26312e -1.57%, #69867d 98.43%);
             border-radius: 40px;
@@ -133,7 +171,6 @@
             cursor: pointer;
         }
     }
-
     &__card {
         color: $color__form;
         text-align: center;

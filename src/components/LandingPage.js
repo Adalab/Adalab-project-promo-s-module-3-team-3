@@ -9,10 +9,10 @@ const LandingPage = ({ cards }) => {
       <h2 className="landingPage__subtitle">
         Escaparate en línea para recoger ideas a través de la tecnología
       </h2>
-      <Link to="/CreateProject">
-        <button className="btn">NUEVO PROYECTO</button>{" "}
+      <Link to="/CreateProject" className="link">
+        <button className="link__btn">NUEVO PROYECTO</button>{" "}
       </Link>
-      <button className="btn">VER PROYECTOS</button>
+      <button className="link__btn">VER PROYECTOS</button>
       <div className="landingDiv">
         {cards.map((card, index) => (
           <Card data={card} key={index} />

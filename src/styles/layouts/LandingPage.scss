@@ -8,8 +8,6 @@
     align-items: center;
     gap: 10px;
     height: auto;
-
-    
         &__title {
                 font-family: $font__landing;
                 font-size: 1.4rem;
@@ -19,7 +17,6 @@
                     font-size: 2rem;
             }
         }
-
         &__subtitle {
             font-family: $font__landing;
             font-size: 1rem;
@@ -30,7 +27,10 @@
                 }
         }
 
-        .btn {
+        .link {
+            text-decoration: none 5px solid #000000;
+       
+        &__btn {
             margin-top: 10px;
             background-color: #7a9994;
             border: 0 solid #E5E7EB;
@@ -45,7 +45,6 @@
             padding: .75rem 1rem;
             position: relative;
             text-align: center;
-            text-decoration: none #000000 solid;
             width: 100%;
             max-width: 360px;
             position: relative;
@@ -61,11 +60,11 @@
         }
         
     
-        .btn:focus {
+        &__btn:focus {
             outline: 0;
         }
     
-        .btn:after {
+        &__btn:after {
             content: '';
             position: absolute;
             border: 1px solid #000000;
@@ -75,11 +74,11 @@
             height: calc(100% - 1px);
         }
     
-        .btn:hover:after {
+        &__btn:hover:after {
             bottom: 2px;
             left: 2px;
         }
-    
+    }
         
 }
 
