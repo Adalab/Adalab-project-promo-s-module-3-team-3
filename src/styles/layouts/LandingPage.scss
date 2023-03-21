@@ -8,19 +8,22 @@
   align-items: center;
   gap: 10px;
   height: 91vh;
-    @media (min-width: $breakpoint-desktop) {
-        height: 92.3vh;
-      }
+  @media (min-width: $breakpoint-desktop) {
+    height: 92.3vh;
+  }
   &__title {
+    text-align: center;
     font-family: $font__landing;
     font-size: 1.4rem;
-    margin-top: 20px;
+    margin-top: 30px;
     @media (min-width: $breakpoint-tablet) {
       font-family: $font__landing;
       font-size: 2rem;
     }
   }
   &__subtitle {
+    margin-top: 15px;
+    text-align: center;
     font-family: $font__landing;
     font-size: 1rem;
     margin-bottom: 30px;
@@ -101,13 +104,20 @@
   }
 
   .msg {
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 700;
     display: flex;
     flex-direction: column;
     align-items: center;
+    @media (min-width: $breakpoint-tablet) {
+      font-size: 20px;
+      font-weight: 700;
+    }
     &__img {
-      height: 250px;
+      height: 150px;
+      @media (min-width: $breakpoint-tablet) {
+        height: 250px;
+      }
     }
   }
 }
