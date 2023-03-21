@@ -71,11 +71,12 @@
         <textarea
           className="form__project--textarea"
           type="text"
-          placeholder="Descripción"
+          placeholder="Descripción con un máximo de 250 caracteres permitido"
           name="desc"
           id="desc"
           value={data.desc}
           onChange={handleInput}
+          maxlength="250"
           required
         ></textarea>
         <span className="error">{dataError.desc}</span>

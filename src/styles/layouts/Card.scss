@@ -12,6 +12,7 @@
     padding: 20px 8.5px 34.5px 8.5px;
     width: 95%;
     height: 214px;
+    max-width: 280px;
 
     @media (min-width: $breakpoint-tablet) {
         padding: 33px 25px 40px 25px;
@@ -77,10 +78,14 @@
             font-size: 8px;
             margin-bottom: 10px;
             line-height: 14.1px;
+            max-width: 200px;
+            overflow-wrap: break-word;
 
             @media (min-width: $breakpoint-tablet) {
                 font-size: 10px;
                 line-height: 17.6px;
+                max-width: 250px;
+                overflow-wrap: break-word;
             }
         }
 
