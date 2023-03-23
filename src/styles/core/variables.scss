@@ -5,6 +5,9 @@ $breakpoint-desktop: 1024px;
 
 // fonts
 
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+$font__landing: 'Quicksand', sans-serif;
 $font__text: 'Poppins', sans-serif;
 $font__card: 'Catamaran', sans-serif;
 $font__form: 'Montserrat', sans-serif;
