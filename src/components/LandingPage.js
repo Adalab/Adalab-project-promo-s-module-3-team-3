@@ -2,8 +2,14 @@ import { Link } from "react-router-dom";
 import "../styles/layouts/LandingPage.scss";
 import Card from "./Preview/Card";
 import landingImg from "../images/landingImg.png";
+import objectToExport from '../services/LocalStorage';
 
-const LandingPage = ({ cards }) => {
+const LandingPage = ({ cards, setCards }) => {
+  const handleResetProjects = () => {
+    objectToExport.remove('cardList');
+    setCards([]);
+  }
+
   return (
     <main className="landingPage">
       <h1 className="landingPage__title">Proyectos y... ¡ya estaría! </h1>
@@ -17,9 +23,10 @@ const LandingPage = ({ cards }) => {
       </Link>
       <button
         className="link__btn"
-        title="Haz click para ver los proyectos almacenados"
+        title="Haz click para eliminar los proyectos almacenados"
+        onClick={handleResetProjects}
       >
-        VER PROYECTOS
+        ELIMINA LOS PROYECTOS
       </button>
       <div className="landingDiv">
         {cards.map((card, index) => (

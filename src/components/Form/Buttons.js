@@ -33,7 +33,7 @@ const Buttons = ({
         >
           Crear Tarjeta
         </button>
-        <button className='form__buttons-img--btn-large' onClick={handleReset}>Reset</button>
+        <button className='form__buttons-img--btn-large' onClick={handleReset}>Clear</button>
       </section>
       <section className={show ? "form__card" : "form__card hidden"}>
         <span className=""> La tarjeta ha sido creada: </span>

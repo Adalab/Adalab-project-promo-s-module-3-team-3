@@ -18,7 +18,7 @@ function App() {
       <Routes>
         <Route 
           path="/" 
-          element={<LandingPage cards={cards} />}/>
+          element={<LandingPage cards={cards} setCards={setCards}/>}/>
         <Route 
           path="/CreateProject" 
           element={<CreateProject cards={cards} setCards={setCards} />}/>

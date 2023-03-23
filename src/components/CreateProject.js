@@ -85,6 +85,7 @@ const CreateProject = ({ cards, setCards }) => {
         setUrl(info.cardURL);
         setShow(info.success);
         setCards([...cards, data]);
+        setData(defaultData);
       });
     }
   };
@@ -93,8 +94,7 @@ const CreateProject = ({ cards, setCards }) => {
     setDataError(false);
     setShow(false);
     setData(defaultData);
-    objectToExport.remove('cardList');
-    setCards([])
+
   }
 
   const validateInput = (name, value) => {
