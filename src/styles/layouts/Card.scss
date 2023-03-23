@@ -29,6 +29,9 @@
         &__subtitle {
             font-size: 8px;
             text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             line-height: 9.4px;
             color: #302c42;
 
@@ -54,6 +57,7 @@
             font-weight: 500;
             color: black;
             margin-top: 10px;
+            overflow-wrap: break-word;
 
             @media (min-width: $breakpoint-tablet) {
                 font-size: 24px;
@@ -148,6 +152,7 @@
             color: #909090;
             font-size: 10px;
             font-family: $font__card;
+            overflow-wrap: break-word;
 
             @media (min-width: $breakpoint-tablet) {
                 font-size: 16px;
@@ -160,6 +165,7 @@
             font-family: $font__card;
             font-weight: 900;
             color: rgba(0, 0, 0, 0.8);
+            overflow-wrap: break-word;
 
             @media (min-width: $breakpoint-tablet) {
                 font-size: 18px;

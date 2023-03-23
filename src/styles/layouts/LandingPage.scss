@@ -2,14 +2,14 @@
 
 .landingPage {
   background-color: $color__green-dark;
-  min-height: auto;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  height: 91vh;
+  min-height: 91vh;
   @media (min-width: $breakpoint-desktop) {
-    height: 92.3vh;
+    min-height: 91.2vh;
   }
   &__title {
     text-align: center;

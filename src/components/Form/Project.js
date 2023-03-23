@@ -76,7 +76,7 @@
           id="desc"
           value={data.desc}
           onChange={handleInput}
-          maxlength="250"
+          maxLength="250"
           required
         ></textarea>
         <span className="error">{dataError.desc}</span>

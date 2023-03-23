@@ -12,9 +12,12 @@ const Form = ({
   url,
   updatePhoto,
   updateImages,
+  handleReset
 }) => {
+
   return (
     <section className="form">
+      <button onClick={handleReset}>Reset</button>
       <h2 className="form__title">Información</h2>
 
       <Project

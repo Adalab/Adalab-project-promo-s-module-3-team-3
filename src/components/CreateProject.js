@@ -76,6 +76,14 @@ const CreateProject = ({ cards, setCards }) => {
     }
   };
 
+  const handleReset = (
+
+  ) => {
+    setDataError(false);
+    setShow(false);
+    setData('')
+  }
+
   const validateInput = (name, value) => {
     if (value === "") {
       return `Introduce ${name}`;
@@ -108,6 +116,7 @@ const CreateProject = ({ cards, setCards }) => {
         url={url}
         updatePhoto={updatePhoto}
         updateImages={updateImages}
+        handleReset={handleReset}
       ></Form>
     </main>
   );
