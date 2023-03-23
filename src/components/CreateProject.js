@@ -3,9 +3,9 @@ import Form from "./Form/Form";
 import "../styles/layouts/Main.scss";
 import { useState } from "react";
 import dataApi from "../services/api";
-// import GetAvatar from "../components/getAvatar/GetAvatar";
 import user from "../images/user.jpeg";
 import cover from "../images/proyecto.jpg";
+import objectToExport from '../services/LocalStorage';
 
 const CreateProject = ({ cards, setCards }) => {
   const [dataError, setDataError] = useState({
@@ -32,6 +32,19 @@ const CreateProject = ({ cards, setCards }) => {
     image: user,
     photo: cover,
   });
+
+  const defaultData = {
+    name: "",
+    slogan: "",
+    repo: "",
+    demo: "",
+    technologies: "",
+    desc: "",
+    autor: "",
+    job: "",
+    image: user,
+    photo: cover,
+  }
 
   const [url, setUrl] = useState("");
   const [show, setShow] = useState(false);
@@ -76,12 +89,12 @@ const CreateProject = ({ cards, setCards }) => {
     }
   };
 
-  const handleReset = (
-
-  ) => {
+  const handleReset = () => {
     setDataError(false);
     setShow(false);
-    setData('')
+    setData(defaultData);
+    objectToExport.remove('cardList');
+    setCards([])
   }
 
   const validateInput = (name, value) => {
