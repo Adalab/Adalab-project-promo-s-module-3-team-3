@@ -68,10 +68,6 @@
             padding-top: 5px;
         }
 
-        /*  &--div {
-                    display: grid;
-                    grid-template-columns: 50% 50%;
-                } */
         &--textarea {
             background-color: transparent;
             border: solid 2px $color__form;
@@ -198,9 +194,12 @@
             &--btn-large:active {
                 background: var(--color);
                 color: #fff;
-            }
-                    
+            } 
         }
+                &__buttons-img-large {
+                    display: flex;
+                }
+
         
     
     &__card {

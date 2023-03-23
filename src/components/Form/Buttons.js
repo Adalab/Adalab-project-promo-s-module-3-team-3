@@ -7,6 +7,7 @@ const Buttons = ({
   url,
   updatePhoto,
   updateImages,
+  handleReset
 }) => {
   return (
     <>
@@ -24,7 +25,7 @@ const Buttons = ({
           updateAvatar={updatePhoto}
         ></GetAvatar>
       </section>
-      <section className="form__buttons-img">
+      <section className="form__buttons-img-large">
         <button
           title="Haz click para crear tu tarjeta"
           className="form__buttons-img--btn-large"
@@ -32,6 +33,7 @@ const Buttons = ({
         >
           Crear Tarjeta
         </button>
+        <button className='form__buttons-img--btn-large' onClick={handleReset}>Reset</button>
       </section>
       <section className={show ? "form__card" : "form__card hidden"}>
         <span className=""> La tarjeta ha sido creada: </span>

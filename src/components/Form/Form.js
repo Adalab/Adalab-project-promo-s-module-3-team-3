@@ -17,7 +17,6 @@ const Form = ({
 
   return (
     <section className="form">
-      <button onClick={handleReset}>Reset</button>
       <h2 className="form__title">Información</h2>
 
       <Project
@@ -38,6 +37,7 @@ const Form = ({
         url={url}
         updatePhoto={updatePhoto}
         updateImages={updateImages}
+        handleReset={handleReset}
       >
         {" "}
       </Buttons>
