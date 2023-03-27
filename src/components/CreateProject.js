@@ -5,7 +5,7 @@ import { useState } from "react";
 import dataApi from "../services/api";
 import user from "../images/user.jpeg";
 import cover from "../images/proyecto.jpg";
-import objectToExport from '../services/LocalStorage';
+import objectToExport from "../services/LocalStorage";
 
 const CreateProject = ({ cards, setCards }) => {
   const [dataError, setDataError] = useState({
@@ -44,7 +44,7 @@ const CreateProject = ({ cards, setCards }) => {
     job: "",
     image: user,
     photo: cover,
-  }
+  };
 
   const [url, setUrl] = useState("");
   const [show, setShow] = useState(false);
@@ -94,14 +94,13 @@ const CreateProject = ({ cards, setCards }) => {
     setDataError(false);
     setShow(false);
     setData(defaultData);
+  };
 
-  }
-
-  const validateInput = (name, value) => {
+  const validateInput = (id, value) => {
     if (value === "") {
-      return `Introduce ${name}`;
+      return `Introduce ${id}`;
     }
-    if (name === "repo" || name === "demo") {
+    if (id === "repo" || id === "demo") {
       if (!(value.startsWith("https://") || value.startsWith("http://"))) {
         //todo No hagas esto y no hagas lo otro NO está OK (!value.startsWith("https://")  y !value.startsWith("http://") , debe ser no hagas esto o lo otro (como lo tenemos ahora está OK).
         return "Introduce un enlace válido que empiece por https:// o http://";
@@ -113,7 +112,8 @@ const CreateProject = ({ cards, setCards }) => {
   const handleInput = (ev) => {
     const inputValue = ev.target.value;
     const inputName = ev.target.name;
-    const error = validateInput(inputName, inputValue);
+    const inputId = ev.target.id;
+    const error = validateInput(inputId, inputValue);
     setData({ ...data, [inputName]: inputValue });
     setDataError({ ...dataError, [inputName]: error });
   };

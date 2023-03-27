@@ -1,7 +1,7 @@
-const Autora = ({data, dataError, handleInput}) => {
-    return(
-        <>
-        <section className="form__ask-info">
+const Autora = ({ data, dataError, handleInput }) => {
+  return (
+    <>
+      <section className="form__ask-info">
         <p className="form__ask-info--subtitle">Cuéntanos sobre la autora</p>
         <hr className="form__ask-info--line" />
       </section>
@@ -19,21 +19,21 @@ const Autora = ({data, dataError, handleInput}) => {
           required
         />
         <span className="error">{dataError.autor}</span>
-        <label htmlFor="job">Trabajo:</label>
+        <label htmlFor="trabajo">Trabajo:</label>
         <input
           className="form__autor--input"
           type="text"
           placeholder="Trabajo"
           name="job"
-          id="job"
+          id="trabajo"
           value={data.job}
           onChange={handleInput}
           required
         />
         <span className="error">{dataError.job}</span>
       </fieldset>
-      </>
-    )
-}
+    </>
+  );
+};
 
 export default Autora;
